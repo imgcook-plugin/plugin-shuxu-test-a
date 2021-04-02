@@ -1,3 +1,5 @@
+const handler = require('./index');
+
 /**
  * @name plugin example
  * @param option: { data, filePath, config }
@@ -8,7 +10,9 @@
 
 const pluginHandler = async options => {
   let { data, filePath, config  } = options;
-  options.data.code.panelDisplay[0].panelValue = `${options.data.code.panelDisplay[0].panelValue}`.replace('想看', '哈哈哈哈会');
+  // options.data.code.panelDisplay[0].panelValue = `${options.data.code.panelDisplay[0].panelValue}`.replace('想看', '哈哈哈哈会');
+
+  handler(options);
   // body...
   return { data, filePath, config };
 };
