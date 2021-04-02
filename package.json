@@ -1,6 +1,6 @@
 {
   "name": "@imgcook/plugin-shuxu-test-a",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "plugin template",
   "main": "index.js",
   "scripts": {
