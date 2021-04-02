@@ -1,4 +1,4 @@
-const handler = require('./index');
+const handler = require('./dist/index');
 
 /**
  * @name plugin example
@@ -12,7 +12,7 @@ const pluginHandler = async options => {
   let { data, filePath, config  } = options;
   // options.data.code.panelDisplay[0].panelValue = `${options.data.code.panelDisplay[0].panelValue}`.replace('想看', '哈哈哈哈会');
 
-  data.xml = handler(options);
+  data.xml = handler.default(options);
   // body...
   return { data, filePath, config };
 };
