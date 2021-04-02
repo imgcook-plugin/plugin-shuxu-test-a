@@ -4,7 +4,8 @@
   "description": "plugin template",
   "main": "index.js",
   "scripts": {
-    "test": "nyc --reporter=text mocha test/__test__.js"
+    "test": "nyc --reporter=text mocha test/__test__.js",
+    "build": "tsc --build tsconfig.json"
   },
   "repository": {
     "type": "git",
@@ -20,11 +21,19 @@
   },
   "homepage": "https://github.com/imgcook-plugin/plugin-template#readme",
   "devDependencies": {
+    "@types/babel__generator": "^7.6.2",
+    "@types/babel__template": "^7.4.0",
+    "@types/babel__traverse": "^7.11.1",
     "chai": "^4.2.0",
     "mocha": "^8.3.0",
     "nyc": "^14.1.1"
   },
   "dependencies": {
+    "@babel/core": "^7.13.14",
+    "@babel/generator": "^7.13.9",
+    "@babel/parser": "^7.13.13",
+    "@babel/template": "^7.12.13",
+    "@babel/traverse": "^7.13.13",
     "@imgcook/plugin-images": "0.1.0-alpha.7"
   }
 }
