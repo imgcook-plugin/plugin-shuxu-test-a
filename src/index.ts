@@ -29,4 +29,5 @@ export default (options: imgCookOptions) => {
 
   const code = generate(ast);
 
+  return code;
 }
