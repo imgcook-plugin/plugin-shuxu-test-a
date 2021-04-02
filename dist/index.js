@@ -26,5 +26,5 @@ exports.default = (options) => {
     // debugger;
     traverse_1.default(ast, transfer_1.traverseConfig);
     const code = generator_1.default(ast);
-    return code;
+    return code.code;
 };
