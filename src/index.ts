@@ -8,11 +8,8 @@ const theCode = `function Component(props) {
   return (<div>{props.dom}</div>);
 }`
 
-export default (options: imgCookOptions) => {
-  const { data } = options;
-  // debugger;
-  // const ast = parse(theCode, {
-  const ast = parse(data.code.xml, {
+function transformCodes(sourceCode = '') {
+  const ast = parse(sourceCode, {
     sourceType: "module",
     plugins: [
       // enable jsx and flow syntax
@@ -21,13 +18,26 @@ export default (options: imgCookOptions) => {
     ]
   });
 
-  // writeFile('./output.js', JSON.stringify(ast));
-
-  // debugger;
-
   traverse(ast, traverseConfig);
 
   const code = generate(ast);
 
   return code.code;
+}
+
+export default (options: imgCookOptions) => {
+  const { data } = options;
+
+  if (data.code.xml) {
+    data.code.xml = transformCodes(data.code.xml);
+  }
+
+  if (data.code?.panelDisplay && data.code?.panelDisplay?.length) {
+    data.code?.panelDisplay?.forEach?.((e) => {
+
+      if (e.panelType === 'js' || e.panelType === 'ts') {
+        e.panelValue = transformCodes(e.panelValue);
+      }
+    })
+  }
 }
