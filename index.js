@@ -14,8 +14,9 @@ const pluginHandler = async options => {
 
   data.xml = handler.default(options);
 
-  options.moduleData.json = options.moduleData.json.replace(/影片名/g, '打算粉红色的');
-  options.moduleData.jsonv2 = options.moduleData.jsonv2.replace(/影片名/g, '打算粉红色的');
+
+  data.moduleData.json = data.moduleData.json.replace(/影片名/g, '打算粉红色的');
+  data.moduleData.jsonv2 = data.moduleData.jsonv2.replace(/影片名/g, '打算粉红色的');
   // body...
   return { data, filePath, config };
 };
