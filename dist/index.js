@@ -36,4 +36,5 @@ exports.default = (options) => {
             return e;
         });
     }
+    return options;
 };

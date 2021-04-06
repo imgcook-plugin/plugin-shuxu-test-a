@@ -41,4 +41,6 @@ export default (options: imgCookOptions) => {
       return e;
     });
   }
+
+  return options;
 }
