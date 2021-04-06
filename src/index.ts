@@ -33,11 +33,12 @@ export default (options: imgCookOptions) => {
   }
 
   if (data.code?.panelDisplay && data.code?.panelDisplay?.length) {
-    data.code?.panelDisplay?.forEach?.((e) => {
+    data.code.panelDisplay = data.code?.panelDisplay?.map?.((e) => {
 
       if (e.panelType === 'js' || e.panelType === 'ts') {
         e.panelValue = transformCodes(e.panelValue);
       }
-    })
+      return e;
+    });
   }
 }
